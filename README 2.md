@@ -46,22 +46,28 @@ You are required to submit the following for review:
 
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
 
-TOP QUESTIONS: how to keep all the info on the page after refresh? am i saving it locally? how do you save locally? how to use moment.js?
 
-//add rows inside the provided container
+TOP QUESTIONS:
+how to keep all the info on the page after refresh?
+am i saving it locally? how do you save locally?
+how to use moment.js?
 
-    //make 9 rows for 9AM-5PM
+    //add rows inside the provided container
 
-        //make 3 columns all equal to 12
+        //make 9 rows for 9AM-5PM
+
+            //make 3 columns all equal to 12
 
 time/task/and save button
 
-            //add colors to the rows
+                //add colors to the rows
 
-white/grey-if its already past and a past event. that time red-current hour- and green for available hour
+white/grey-if its already past and a past event. that time red-current hour-
+and green for available hour
 
-                //"when you click on the box" you can adjust the text in that
+                    //"when you click on the box" you can adjust the text in that
 
-box, possibly use jquery target change text content onclick i need to be able to adjust the text
+box, possibly use jquery target change text content
+_onclick i need to be able to adjust the text_
 
-                    //when i click on the button i need to be able to change event
+                        //when i click on the button i need to be able to change event
