@@ -46,7 +46,6 @@ You are required to submit the following for review:
 
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
 
-
 TOP QUESTIONS:
 how to keep all the info on the page after refresh?
 am i saving it locally? how do you save locally?
@@ -71,3 +70,5 @@ box, possibly use jquery target change text content
 _onclick i need to be able to adjust the text_
 
                         //when i click on the button i need to be able to change event
+
+// target DIVs with id
