@@ -67,7 +67,7 @@ for (var i = 0; i < calenderTextarea.length; i++) {
 function retain() {
   if (nineAm.value === "") {
     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-    $("nineAm").append(localStoragePull);
+    document.getElementById("nineAm").value = localStoragePull;
   } else console.log("pizza");
 }
 
@@ -81,3 +81,5 @@ function saveBtnClick(e) {
   e.preventDefault;
   localStorage.setItem("nineAm", nineAm.value);
 }
+
+//ask/ I’m having a hard time getting the day planner nineAm <textarea> to stay after refresh. I’m successfully saving a key.value pair to local storage upon button click. Now I’m trying to figure out a successful retain function on line 67 that call back the value in the text area after refresh. attached link to github repo branch https://github.com/steveo9219/steveos-work-day-scheduler/tree/4-work-on-how-to-store-the-textarea-content-locally
