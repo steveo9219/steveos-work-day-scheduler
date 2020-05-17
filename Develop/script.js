@@ -10,6 +10,7 @@ var twoPm = document.getElementById("twoPm");
 var threePm = document.getElementById("threePm");
 var fourPm = document.getElementById("fourPm");
 var fivePm = document.getElementById("fivePm");
+//alt jQ var contents = $('#contents');
 
 var nineAmTextarea = document.getElementById("nineAmContent");
 var tenAmTextarea = document.getElementById("tenAmContent");
@@ -33,20 +34,26 @@ var calenderTextarea = [
   fivePmTextarea,
 ];
 
-// var timeSlotTextarea = [
-//   nineAm.value,
-//   tenAm.value,
-//   elevenAm.value,
-//   twelvePm.value,
-//   onePm.value,
-//   twoPm.value,
-//   threePm.value,
-//   fourPm.value,
-//   fivePm.value,
-// ];
+var timeSlotTextarea = {
+  nineAm: localStorage.getItem("nineAm", "nineAm.value"),
+  tenAm: localStorage.getItem("tenAm", "tenAm.value"),
+  //   elevenAm.value,
+  //   twelvePm.value,
+  //   onePm.value,
+  //   twoPm.value,
+  //   threePm.value,
+  //   fourPm.value,
+  //   fivePm.value,
+};
 
-// this is how to get to the context area for 9am
-//nineAm.value = "this is it";
+//
+//
+for (var [key, value] of Object.entries(timeSlotTextarea)) {
+  console.log(`Key => ${key} | Value => ${value}`);
+  document.getElementById("nineAm").value = value;
+  document.getElementById("tenAm").value = value;
+}
+
 var m = moment().format("HH");
 for (var i = 0; i < calenderTextarea.length; i++) {
   var currentTextAreaTime = calenderTextarea[i].getAttribute("value");
@@ -60,50 +67,22 @@ for (var i = 0; i < calenderTextarea.length; i++) {
   }
 }
 
-if (nineAm.value === "") {
-  var nineAmStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-  document.getElementById("nineAm").value = nineAmStoragePull;
-} else console.log("pizza");
+for (i = 0; i < timeSlotTextarea.length; i++) {
+  var currentTextAreaTime = timeSlotTextarea[i].getAttribute("value");
+}
+// this is how to get to the context area for 9am
+//nineAm.value = "this is it";
+///////////////////////////////////------------------------------------
+// if (nineAm.value === "") {
+//   var nineAmStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+//   document.getElementById("nineAm").value = nineAmStoragePull;
+// } else console.log("pizza");
 
-if (tenAm.value === "") {
-  var tenAmStoragePull = localStorage.getItem("tenAm", "tenAm.value");
-  document.getElementById("tenAm").value = tenAmStoragePull;
-} else console.log("pizza");
-
-//   if (nineAm.value === "") {
-//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-//     document.getElementById("nineAm").value = localStoragePull;
-//   } else console.log("pizza");
-
-//   if (nineAm.value === "") {
-//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-//     document.getElementById("nineAm").value = localStoragePull;
-//   } else console.log("pizza");
-
-//   if (nineAm.value === "") {
-//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-//     document.getElementById("nineAm").value = localStoragePull;
-//   } else console.log("pizza");
-
-//   if (nineAm.value === "") {
-//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-//     document.getElementById("nineAm").value = localStoragePull;
-//   } else console.log("pizza");
-
-//   if (nineAm.value === "") {
-//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-//     document.getElementById("nineAm").value = localStoragePull;
-//   } else console.log("pizza");
-
-//   if (nineAm.value === "") {
-//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-//     document.getElementById("nineAm").value = localStoragePull;
-//   } else console.log("pizza");
-
-//   if (nineAm.value === "") {
-//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-//     document.getElementById("nineAm").value = localStoragePull;
-//   } else console.log("pizza");
+// if (tenAm.value === "") {
+//   var tenAmStoragePull = localStorage.getItem("tenAm", "tenAm.value");
+//   document.getElementById("tenAm").value = tenAmStoragePull;
+// } else console.log("pizza");
+///////////////////////////////////------------------------------------
 
 //this is the event listener for the save button on the row of 9am
 document
