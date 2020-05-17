@@ -20,7 +20,7 @@ var twoPmTextarea = document.getElementById("twoPmContent");
 var threePmTextarea = document.getElementById("threePmContent");
 var fourPmTextarea = document.getElementById("fourPmContent");
 var fivePmTextarea = document.getElementById("fivePmContent");
-
+retain();
 var calenderTextarea = [
   nineAmTextarea,
   tenAmTextarea,
@@ -33,8 +33,22 @@ var calenderTextarea = [
   fivePmTextarea,
 ];
 
-var currentDay = document.getElementById("#currentDay");
+// var timeSlotTextarea = [
+//   nineAm.value,
+//   tenAm.value,
+//   elevenAm.value,
+//   twelvePm.value,
+//   onePm.value,
+//   twoPm.value,
+//   threePm.value,
+//   fourPm.value,
+//   fivePm.value,
+// ];
+
+// this is how to get to the context area for 9am
+//nineAm.value = "this is it";
 var m = moment().format("HH");
+console.log(nineAm.value);
 for (var i = 0; i < calenderTextarea.length; i++) {
   var currentTextAreaTime = calenderTextarea[i].getAttribute("value");
   if (currentTextAreaTime == m) {
@@ -47,12 +61,23 @@ for (var i = 0; i < calenderTextarea.length; i++) {
   }
 }
 
-//everytime hit save button loop through for loop can use .innerHTML top repopulate
-//do you have obj for key, value, pair
-//save button, for loop,
+//trying to create a retain function that when detected as empty pulls from local storage
+// and when page is refreshed "retain" that data by pulling from local storage and appending it to
+// "nineAm" which is the textarea id=
+function retain() {
+  if (nineAm.value === "") {
+    var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+    $("nineAm").append(localStoragePull);
+  } else console.log("pizza");
+}
 
-//put in local storage id , key.value.pair
-//local storage uses json.strings "key" in front. parse int after it comes out of storage
-//click save button, goes through every text area, grabs current value, creates object
-//object has a key and has same id as an id
-//then stringify,
+//this is the event listener for the save button on the row of 9am
+document
+  .getElementById("nineAmSaveBtn")
+  .addEventListener("click", saveBtnClick);
+
+//on click this saves the value of nineAm to local storage
+function saveBtnClick(e) {
+  e.preventDefault;
+  localStorage.setItem("nineAm", nineAm.value);
+}
