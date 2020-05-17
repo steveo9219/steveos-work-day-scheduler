@@ -50,8 +50,8 @@ var timeSlotTextarea = {
 //
 for (var [key, value] of Object.entries(timeSlotTextarea)) {
   console.log(`Key => ${key} | Value => ${value}`);
-  document.getElementById("nineAm").value = value;
-  document.getElementById("tenAm").value = value;
+  document.getElementById("nineAm").value = timeSlotTextarea.nineAm;
+  document.getElementById("tenAm").value = timeSlotTextarea.tenAm;
 }
 
 var m = moment().format("HH");
