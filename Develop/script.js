@@ -20,7 +20,7 @@ var twoPmTextarea = document.getElementById("twoPmContent");
 var threePmTextarea = document.getElementById("threePmContent");
 var fourPmTextarea = document.getElementById("fourPmContent");
 var fivePmTextarea = document.getElementById("fivePmContent");
-retain();
+
 var calenderTextarea = [
   nineAmTextarea,
   tenAmTextarea,
@@ -48,7 +48,6 @@ var calenderTextarea = [
 // this is how to get to the context area for 9am
 //nineAm.value = "this is it";
 var m = moment().format("HH");
-console.log(nineAm.value);
 for (var i = 0; i < calenderTextarea.length; i++) {
   var currentTextAreaTime = calenderTextarea[i].getAttribute("value");
   if (currentTextAreaTime == m) {
@@ -61,25 +60,67 @@ for (var i = 0; i < calenderTextarea.length; i++) {
   }
 }
 
-//trying to create a retain function that when detected as empty pulls from local storage
-// and when page is refreshed "retain" that data by pulling from local storage and appending it to
-// "nineAm" which is the textarea id=
-function retain() {
-  if (nineAm.value === "") {
-    var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
-    document.getElementById("nineAm").value = localStoragePull;
-  } else console.log("pizza");
-}
+if (nineAm.value === "") {
+  var nineAmStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+  document.getElementById("nineAm").value = nineAmStoragePull;
+} else console.log("pizza");
+
+if (tenAm.value === "") {
+  var tenAmStoragePull = localStorage.getItem("tenAm", "tenAm.value");
+  document.getElementById("tenAm").value = tenAmStoragePull;
+} else console.log("pizza");
+
+//   if (nineAm.value === "") {
+//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+//     document.getElementById("nineAm").value = localStoragePull;
+//   } else console.log("pizza");
+
+//   if (nineAm.value === "") {
+//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+//     document.getElementById("nineAm").value = localStoragePull;
+//   } else console.log("pizza");
+
+//   if (nineAm.value === "") {
+//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+//     document.getElementById("nineAm").value = localStoragePull;
+//   } else console.log("pizza");
+
+//   if (nineAm.value === "") {
+//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+//     document.getElementById("nineAm").value = localStoragePull;
+//   } else console.log("pizza");
+
+//   if (nineAm.value === "") {
+//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+//     document.getElementById("nineAm").value = localStoragePull;
+//   } else console.log("pizza");
+
+//   if (nineAm.value === "") {
+//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+//     document.getElementById("nineAm").value = localStoragePull;
+//   } else console.log("pizza");
+
+//   if (nineAm.value === "") {
+//     var localStoragePull = localStorage.getItem("nineAm", "nineAm.value");
+//     document.getElementById("nineAm").value = localStoragePull;
+//   } else console.log("pizza");
 
 //this is the event listener for the save button on the row of 9am
 document
   .getElementById("nineAmSaveBtn")
-  .addEventListener("click", saveBtnClick);
+  .addEventListener("click", nineAmSaveBtnClick);
 
 //on click this saves the value of nineAm to local storage
-function saveBtnClick(e) {
+function nineAmSaveBtnClick(e) {
   e.preventDefault;
   localStorage.setItem("nineAm", nineAm.value);
 }
 
-//ask/ I’m having a hard time getting the day planner nineAm <textarea> to stay after refresh. I’m successfully saving a key.value pair to local storage upon button click. Now I’m trying to figure out a successful retain function on line 67 that call back the value in the text area after refresh. attached link to github repo branch https://github.com/steveo9219/steveos-work-day-scheduler/tree/4-work-on-how-to-store-the-textarea-content-locally
+document
+  .getElementById("tenAmSaveBtn")
+  .addEventListener("click", tenAmSaveBtnClick);
+
+function tenAmSaveBtnClick(e) {
+  e.preventDefault;
+  localStorage.setItem("tenAm", tenAm.value);
+}
