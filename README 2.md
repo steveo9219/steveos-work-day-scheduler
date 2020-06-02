@@ -70,3 +70,11 @@ box, possibly use jquery target change text content
 _onclick i need to be able to adjust the text_
 
                         //when i click on the button i need to be able to change event
+
+// target DIVs with id
+
+1.input is put in by user and assigned a value
+
+2. value needs to be stored in an object
+
+3. value needs to be able to be pulled out and put in
